@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Ch6_view</string>
+    <string name="applockdoesnt">어플 잠금이 실행 중이지 않아요</string>
+    <string name="applockda">APP LOCK</string>
+</resources>
