@@ -17,7 +17,7 @@
         android:contentDescription="@null"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/blue_circle" />
@@ -40,12 +40,11 @@
         android:id="@+id/switch2"
         android:layout_width="106dp"
         android:layout_height="67dp"
+        android:layout_marginEnd="116dp"
         android:fontFamily="sans-serif"
         android:thumb="@drawable/switch_thumb"
         android:track="@drawable/switch_track_selector"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.525"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
