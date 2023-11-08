@@ -33,13 +33,14 @@
         android:id="@+id/community_add_button"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
         android:background="#00FFFFFF"
         android:text="+"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="52sp"
         app:layout_constraintBottom_toBottomOf="@+id/community_toolbar"
-        app:layout_constraintTop_toTopOf="@+id/community_toolbar"
-        tools:layout_editor_absoluteX="341dp" />
+        app:layout_constraintStart_toEndOf="@+id/community_appbar_text"
+        app:layout_constraintTop_toTopOf="@+id/community_toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
