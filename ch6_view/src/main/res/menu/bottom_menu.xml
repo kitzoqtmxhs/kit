@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/setting"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings"
+        android:title="켈린더"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/rank"
+        android:enabled="true"
+        android:icon="@drawable/ic_rank"
+        android:title="랭킹"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/info"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="스톱워치"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="잠금"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/community"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="커뮤니티"
+        app:showAsAction="always"
+        />
+
+</menu>

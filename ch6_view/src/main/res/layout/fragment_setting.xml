@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingFragment"
+    android:background="@drawable/mainlayer">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="-48dp">
+
+        <!-- 이미지와 텍스트를 옆에 배치하는 수평 레이아웃 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!-- 이미지 버튼 -->
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="80dp"
+                android:layout_height="72dp"
+                android:background="#007af3"
+                android:scaleType="fitCenter"
+                android:src="@drawable/button" />
+
+            <!-- 텍스트 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginRight="70sp"
+                android:gravity="center"
+                android:text="켈린더"
+                android:textColor="#FFFFFF"
+                android:textSize="50sp" />
+        </LinearLayout>
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true" />
+
+        <!-- 새로운 버튼 레이아웃 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/dayButton"
+                android:layout_width="137dp"
+                android:layout_height="80dp"
+                android:background="#FFFFFF"
+                android:text="일간"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/weekButton"
+                android:layout_width="137dp"
+                android:layout_height="80dp"
+                android:background="#FFFFFF"
+                android:text="주간"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/monthButton"
+                android:layout_width="137dp"
+                android:layout_height="80dp"
+                android:background="#FFFFFF"
+                android:text="월간"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/selectedDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="선택한 날짜:"
+            android:textSize="30sp"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            android:textStyle="bold"
+            android:layout_marginLeft="80sp"
+            android:textColor="#000000"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
