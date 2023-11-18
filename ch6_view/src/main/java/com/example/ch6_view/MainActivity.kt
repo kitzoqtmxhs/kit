@@ -2,6 +2,7 @@ package com.example.ch6_view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -11,7 +12,6 @@ class MainActivity : AppCompatActivity() {
     private val rankFragment = RankFragment()
     private val communityFragment = CommunityFragment()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,32 +20,34 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.home -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.containers, homeFragment).commit()
+                    replaceFragment(homeFragment)
                     true
                 }
                 R.id.setting -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.containers, settingFragment).commit()
+                    replaceFragment(settingFragment)
                     true
                 }
                 R.id.info -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.containers, infoFragment)
-                        .commit()
+                    replaceFragment(infoFragment)
                     true
                 }
                 R.id.community -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.containers, communityFragment)
-                        .commit()
+                    replaceFragment(communityFragment)
                     true
                 }
-                    R.id.rank -> {
-                        supportFragmentManager.beginTransaction().replace(R.id.containers, rankFragment).commit()
-                        true
+                R.id.rank -> {
+                    replaceFragment(rankFragment)
+                    true
                 }
                 else -> false
             }
         }
 
         // 디폴트로 표시할 프래그먼트 설정
-        supportFragmentManager.beginTransaction().replace(R.id.containers, homeFragment).commit()
+        replaceFragment(homeFragment)
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction().replace(R.id.containers, fragment).commit()
     }
 }
