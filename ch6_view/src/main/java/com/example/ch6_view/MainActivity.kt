@@ -1,5 +1,6 @@
 package com.example.ch6_view
 
+import RankingsFragment
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -9,7 +10,7 @@ class MainActivity : AppCompatActivity() {
     private val homeFragment = HomeFragment()
     private val settingFragment = SettingFragment()
     private val infoFragment = InfoFragment()
-    private val rankFragment = RankFragment()
+    private val rankingsFragment = RankingsFragment()
     private val communityFragment = CommunityFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.rank -> {
-                    replaceFragment(rankFragment)
+                    replaceFragment(rankingsFragment)
                     true
                 }
                 else -> false
