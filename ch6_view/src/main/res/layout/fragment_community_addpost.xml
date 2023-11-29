@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/community_toolbar"
+            android:layout_height="70dp"
+            android:background="@color/blue"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"  android:layout_width="match_parent"/>
+
+        <TextView
+            android:id="@+id/community_toolbar_text"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:text="커뮤니티"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/community_toolbar"
+            tools:ignore="HardcodedText,TextSizeCheck" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="10dp"
+            android:text="제목"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toStartOf="@+id/community_addpost_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/community_toolbar"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/community_addpost_title"
+            android:layout_width="285dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="39dp"
+            android:background="@drawable/sign_edittext_background"
+            android:ems="10"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:paddingStart="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/community_toolbar"
+            tools:ignore="LabelFor,RtlSymmetry,SpeakableTextPresentCheck"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="10dp"
+            android:text="내용"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toStartOf="@+id/community_addpost_contents"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            tools:ignore="HardcodedText" />
+
+        <android.widget.Button
+            android:id="@+id/community_addpost_button"
+            android:layout_width="120dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/login_login_button_background"
+            android:text="등록 하기"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/community_addpost_checkbox"
+            tools:ignore="HardcodedText,TextSizeCheck" />
+
+        <EditText
+            android:id="@+id/community_addpost_contents"
+            android:layout_width="285dp"
+            android:layout_height="260dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="39dp"
+            android:background="@drawable/sign_edittext_background"
+            android:ems="10"
+            android:gravity="start|top"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/community_addpost_title"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+
+        <CheckBox
+            android:id="@+id/community_addpost_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="39dp"
+            android:minHeight="48dp"
+            android:text="익명"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/community_addpost_contents"
+            tools:ignore="HardcodedText,MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
