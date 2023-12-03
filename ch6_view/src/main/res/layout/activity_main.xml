@@ -42,6 +42,13 @@
                 android:layout_centerInParent="true"
                 android:thumb="@drawable/switch_thumb"
                 android:track="@drawable/switch_track_selector" />
+
+            <Button
+                android:id="@+id/lock"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Lock the Phone"
+                android:layout_centerHorizontal="true"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -67,8 +74,6 @@
 
 
 
-
-
     <TextView
         android:id="@+id/ApplocktextView2"
         android:layout_width="wrap_content"
@@ -88,6 +93,23 @@
         app:layout_constraintVertical_bias="0.538" />
 
     <TextView
+        android:id="@+id/ApplocktextView3"
+        android:layout_width="325dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="120dp"
+        android:fontFamily="serif-monospace"
+        android:text="@string/applockda2"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.232"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <TextView
         android:id="@+id/status_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -99,5 +121,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+
+    <Button
+        android:id="@+id/enableBtn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="180dp"
+        android:text="@string/applockbtntext1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        />
+
+    <Button
+        android:id="@+id/disableBtn"
+        android:layout_width="151dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="180dp"
+        android:text="@string/applockbtntext2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.0"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

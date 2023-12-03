@@ -1,5 +1,8 @@
 package com.example.ch6_view
 
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.Switch
@@ -38,3 +41,4 @@ class MainActivity : AppCompatActivity(){
         }
     }//onCreate
 }
+
