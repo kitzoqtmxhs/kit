@@ -1,40 +1,84 @@
 package com.example.ch6_view
 
+import android.app.ActivityManager
+import android.app.admin.DevicePolicyManager
+import android.content.ComponentName
+import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.Switch
-import android.widget.TextView
-import android.widget.ToggleButton
+import android.view.View
+import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SwitchCompat
 
 
-class MainActivity : AppCompatActivity(){
-
-    override fun onCreate(savedInstanceState: Bundle?) {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
+    private var lock: Button? = null
+    private var disable: Button? = null
+    private var enable: Button? = null
+    private var devicePolicyManager: DevicePolicyManager? = null
+    private var activityManager: ActivityManager? = null
+    private var compName: ComponentName? = null
+    public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        devicePolicyManager = getSystemService(DEVICE_POLICY_SERVICE) as DevicePolicyManager
+        activityManager = getSystemService(ACTIVITY_SERVICE) as ActivityManager
+        compName = ComponentName(this, MyAdmin::class.java)
+        lock = findViewById<View>(R.id.lock) as Button
+        enable = findViewById<View>(R.id.enableBtn) as Button
+        disable = findViewById<View>(R.id.disableBtn) as Button
+        lock!!.setOnClickListener(this)
+        enable!!.setOnClickListener(this)
+        disable!!.setOnClickListener(this)
+    }
 
-        //객체 생성
-        val statusText: TextView = findViewById(R.id.status_text)
-        val switchView: SwitchCompat = findViewById(R.id.switchView)
-        val statusCircle: ImageView = findViewById(R.id.imageView4)
-        val statusLock: ImageView = findViewById(R.id.imageView)
+    override fun onResume() {
+        super.onResume()
+        val isActive = devicePolicyManager!!.isAdminActive(compName!!)
+        disable!!.visibility = if (isActive) View.VISIBLE else View.GONE
+        enable!!.visibility = if (isActive) View.GONE else View.VISIBLE
+    }
 
-        //switch 체크 이벤트
-        switchView.setOnCheckedChangeListener { p0, isChecked ->
-            if (isChecked) {
-                statusText.text = "앱 잠금 실행 중"
-                statusCircle.setImageResource(R.drawable.blue_circle2)
-                statusLock.setImageResource(R.drawable.baseline_lock_24)
-                statusLock.bringToFront();
-                switchView.bringToFront();
-
+    override fun onClick(view: View) {
+        if (view === lock) {
+            val active = devicePolicyManager!!.isAdminActive(compName!!)
+            if (active) {
+                devicePolicyManager!!.lockNow()
             } else {
-                statusText.text = "앱 잠금이 실행중이지 않아요"
-                statusCircle.setImageResource(R.drawable.blue_circle)
-                statusLock.setImageResource(R.drawable.baseline_lock_open_24)
+                Toast.makeText(
+                    this,
+                    "관리자 권한이 필요한 기능입니다.",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        } else if (view === enable) {
+            val intent = Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN)
+            intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, compName)
+            intent.putExtra(
+                DevicePolicyManager.EXTRA_ADD_EXPLANATION,
+                "왜 이 기능이 필요한지에 대한 설명입니다."
+            )
+            startActivityForResult(intent, RESULT_ENABLE)
+        } else if (view === disable) {
+            devicePolicyManager!!.removeActiveAdmin(compName!!)
+            disable!!.visibility = View.GONE
+            enable!!.visibility = View.VISIBLE
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        when (requestCode) {
+            RESULT_ENABLE -> if (resultCode == RESULT_OK) {
+                Toast.makeText(this@MainActivity, "관리자 권한 실행", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this@MainActivity, "관리자 권한 실행에 문제가 발생", Toast.LENGTH_SHORT).show()
             }
         }
-    }//onCreate
+        super.onActivityResult(requestCode, resultCode, data)
+    }
+
+    companion object {
+        const val RESULT_ENABLE = 11
+    }
 }
+
