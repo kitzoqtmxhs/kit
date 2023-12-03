@@ -24,7 +24,7 @@
             android:layout_width="213dp"
             android:layout_height="159dp"
             android:layout_centerInParent="true"
-            app:srcCompat="@drawable/baseline_lock_24"
+            app:srcCompat="@drawable/baseline_lock_open_24"
             android:contentDescription="@null"
             />
         <RelativeLayout

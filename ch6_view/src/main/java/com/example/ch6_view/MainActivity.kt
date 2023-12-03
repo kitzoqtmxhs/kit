@@ -11,10 +11,6 @@ import androidx.appcompat.widget.SwitchCompat
 
 class MainActivity : AppCompatActivity(){
 
-    var imageView: ImageView? = null
-    var toggleButton: ToggleButton? = null
-    var aSwitch: Switch? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,15 +19,21 @@ class MainActivity : AppCompatActivity(){
         val statusText: TextView = findViewById(R.id.status_text)
         val switchView: SwitchCompat = findViewById(R.id.switchView)
         val statusCircle: ImageView = findViewById(R.id.imageView4)
+        val statusLock: ImageView = findViewById(R.id.imageView)
 
         //switch 체크 이벤트
         switchView.setOnCheckedChangeListener { p0, isChecked ->
             if (isChecked) {
                 statusText.text = "앱 잠금 실행 중"
                 statusCircle.setImageResource(R.drawable.blue_circle2)
+                statusLock.setImageResource(R.drawable.baseline_lock_24)
+                statusLock.bringToFront();
+                switchView.bringToFront();
+
             } else {
                 statusText.text = "앱 잠금이 실행중이지 않아요"
                 statusCircle.setImageResource(R.drawable.blue_circle)
+                statusLock.setImageResource(R.drawable.baseline_lock_open_24)
             }
         }
     }//onCreate
