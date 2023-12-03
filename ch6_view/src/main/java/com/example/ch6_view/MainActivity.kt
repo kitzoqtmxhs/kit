@@ -7,8 +7,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SwitchCompat
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -21,6 +24,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+
+
         devicePolicyManager = getSystemService(DEVICE_POLICY_SERVICE) as DevicePolicyManager
         activityManager = getSystemService(ACTIVITY_SERVICE) as ActivityManager
         compName = ComponentName(this, MyAdmin::class.java)
@@ -41,9 +48,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(view: View) {
         if (view === lock) {
+
+            val statusText: TextView = findViewById(R.id.status_text)
+            val statusCircle: ImageView = findViewById(R.id.imageView4)
+            val statusLock: ImageView = findViewById(R.id.imageView)
+
             val active = devicePolicyManager!!.isAdminActive(compName!!)
+
+            statusCircle.setImageResource(R.drawable.blue_circle2)
+            statusLock.setImageResource(R.drawable.baseline_lock_24)
+            statusLock.bringToFront();
+
             if (active) {
                 devicePolicyManager!!.lockNow()
+                statusText.text = "앱 잠금 실행 중"
+
             } else {
                 Toast.makeText(
                     this,
