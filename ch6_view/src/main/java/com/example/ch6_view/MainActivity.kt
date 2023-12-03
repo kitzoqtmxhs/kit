@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, compName)
             intent.putExtra(
                 DevicePolicyManager.EXTRA_ADD_EXPLANATION,
-                "왜 이 기능이 필요한지에 대한 설명입니다."
+                "-"
             )
             startActivityForResult(intent, RESULT_ENABLE)
         } else if (view === disable) {
