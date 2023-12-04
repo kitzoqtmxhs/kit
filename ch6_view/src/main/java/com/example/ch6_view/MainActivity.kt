@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
     private val settingFragment = SettingFragment()
     private val infoFragment = InfoFragment()
     private val rankingsFragment = RankingsFragment()
-    private val communityFragment = CommunityFragment()
+    private val NoticeFragment = NoticeFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,11 +33,11 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.community -> {
-                    replaceFragment(communityFragment)
+                    replaceFragment(rankingsFragment)
                     true
                 }
                 R.id.rank -> {
-                    replaceFragment(rankingsFragment)
+                    replaceFragment(NoticeFragment)
                     true
                 }
                 else -> false
