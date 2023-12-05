@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
     private val homeFragment = HomeFragment()
     private val settingFragment = SettingFragment()
     private val infoFragment = InfoFragment()
-    private val rankingsFragment = RankingsFragment()
+    private val communityFragment = CommunityFragment()
     private val NoticeFragment = NoticeFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.community -> {
-                    replaceFragment(rankingsFragment)
+                    replaceFragment(communityFragment)
                     true
                 }
                 R.id.rank -> {

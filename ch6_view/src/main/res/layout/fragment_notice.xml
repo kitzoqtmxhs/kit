@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/community_toolbar"
+        android:id="@+id/notice_toolbar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="@color/blue"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/community_toolbar_text"
+        android:id="@+id/notice_toolbar_text"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:gravity="center_horizontal|center_vertical"
@@ -27,7 +27,7 @@
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/community_toolbar"
+        app:layout_constraintTop_toTopOf="@+id/notice_toolbar"
         tools:ignore="HardcodedText,TextSizeCheck" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
