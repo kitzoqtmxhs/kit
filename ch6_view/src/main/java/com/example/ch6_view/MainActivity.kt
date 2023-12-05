@@ -11,7 +11,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SwitchCompat
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -24,7 +23,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
 
 
@@ -53,6 +51,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val statusCircle: ImageView = findViewById(R.id.imageView4)
             val statusLock: ImageView = findViewById(R.id.imageView)
 
+
             val active = devicePolicyManager!!.isAdminActive(compName!!)
 
             statusCircle.setImageResource(R.drawable.blue_circle2)
@@ -60,8 +59,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             statusLock.bringToFront();
 
             if (active) {
+                statusText.text = "앱 잠금 작동! 곧 실행됩니다."
+                val intent = Intent(applicationContext, ScreenService::class.java)
+                startService(intent)
+
                 devicePolicyManager!!.lockNow()
-                statusText.text = "앱 잠금 실행 중"
+
 
             } else {
                 Toast.makeText(
