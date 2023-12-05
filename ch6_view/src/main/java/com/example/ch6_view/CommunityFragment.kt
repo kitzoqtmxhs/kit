@@ -35,7 +35,6 @@ class CommunityFragment : Fragment() {
         val addButton = view.findViewById<ImageButton>(R.id.community_add_button)
 
         addButton?.setOnClickListener {
-            // AFragment로 이동하는 코드
             val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
 
             val addFragment = CommunityAddFragment()

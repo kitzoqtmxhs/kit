@@ -63,24 +63,21 @@ class CommunityAddFragment : Fragment() {
                 // 익명 체크 되어있을때 처리
 
                 // 데이터베이스로 보내는 코드
+                    val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
 
-                val intent = Intent (requireContext(), CommunityFragment::class.java)
-//                intent.putExtra("title",info.title)
-//                intent.putExtra("contents",info.contents)
-//                intent.putExtra("writer",info.writer)
-
-                startActivity(intent)
-
+                    val addFragment = CommunityFragment()
+                    fragmentTransaction.replace(R.id.containers, addFragment)
+                    fragmentTransaction.commit()
             } else {
                 // 익명 체크 되어있지 않을때
 
                 // 데이터베이스로 보내는 코드
 
-                val intent = Intent (requireContext(), CommunityFragment::class.java)
-//                intent.putExtra("title",info.title)
-//                intent.putExtra("contents",info.contents)
-//                intent.putExtra("writer",info.writer)
-                startActivity(intent)
+                val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+
+                val addFragment = CommunityFragment()
+                fragmentTransaction.replace(R.id.containers, addFragment)
+                fragmentTransaction.commit()
 
             }
             return@setOnClickListener
