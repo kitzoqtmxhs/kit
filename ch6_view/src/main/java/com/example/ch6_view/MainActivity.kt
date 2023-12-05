@@ -5,6 +5,8 @@ import android.app.admin.DevicePolicyManager
 import android.content.ComponentName
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -54,16 +56,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             val active = devicePolicyManager!!.isAdminActive(compName!!)
 
-            statusCircle.setImageResource(R.drawable.blue_circle2)
-            statusLock.setImageResource(R.drawable.baseline_lock_24)
-            statusLock.bringToFront();
+
 
             if (active) {
                 statusText.text = "앱 잠금 작동! 곧 실행됩니다."
-                val intent = Intent(applicationContext, ScreenService::class.java)
-                startService(intent)
+                statusCircle.setImageResource(R.drawable.blue_circle2)
+                statusLock.setImageResource(R.drawable.baseline_lock_24)
+                statusLock.bringToFront();
+                val handler = Handler()
+                handler.postDelayed({
 
-                devicePolicyManager!!.lockNow()
+                    val intent = Intent(applicationContext, ScreenService::class.java)
+                    startService(intent)
+
+                    devicePolicyManager!!.lockNow()
+                }, 1200)
+
 
 
             } else {

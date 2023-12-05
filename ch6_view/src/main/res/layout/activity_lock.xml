@@ -59,7 +59,7 @@
                 android:background="#002F3238"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:text="뒤로가기"
+                android:text="잠겨진 앱입니다. 뒤로가기를 눌러 잠금을 해제합니다."
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 ></TextView>
