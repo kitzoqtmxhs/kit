@@ -1,0 +1,18 @@
+<!-- todo_list_item.xml -->
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- 각 투두 아이템을 위한 TextView -->
+    <TextView
+        android:id="@+id/todoItemTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#000000" />
+</LinearLayout>

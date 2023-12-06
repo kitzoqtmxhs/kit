@@ -2,6 +2,11 @@
     <string name="app_name">Ch6_view</string>
     <string name="applockdoesnt">어플 잠금이 실행 중이지 않아요</string>
     <string name="applockda">APP LOCK</string>
+    <string name="applockda2">잠금 기능을 사용하기 전에 관리자 권한 설정이 필요합니다.</string>
+    <string name="applockbtntext1">관리자 권한 켜기</string>
+    <string name="applockbtntext2">관리자 권한 끄기</string>
+    <string name="applockbtntext3">클릭하여 폰 잠금</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

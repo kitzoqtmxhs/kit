@@ -5,25 +5,25 @@
     <item
         android:id="@+id/home"
         android:icon="@drawable/ic_home"
-        android:title="Home" />
+        android:title="잠금" />
 
     <item
         android:id="@+id/setting"
         android:icon="@drawable/ic_settings"
-        android:title="Setting" />
+        android:title="켈린더" />
 
-    <item
-        android:id="@+id/info"
-        android:icon="@drawable/ic_info"
-        android:title="Info" />
 
     <item
         android:id="@+id/community"
         android:icon="@drawable/ic_community"
-        android:title="Community" />
+        android:title="공지사항" />
 
     <item
-        android:id="@+id/rank"
-        android:icon="@drawable/ic_rank"
-        android:title="Rank" />
+        android:id="@+id/watch"
+        android:icon="@drawable/ic_watch"
+        android:title="스톱워치" />
+    <item
+        android:id="@+id/todo"
+        android:icon="@drawable/ic_watch"
+        android:title="메모장" />
 </menu>

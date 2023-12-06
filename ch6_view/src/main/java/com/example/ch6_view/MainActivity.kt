@@ -1,17 +1,18 @@
 package com.example.ch6_view
 
-import RankingsFragment
+import StopwatchFragment
+import TodoListFragment
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
-    private val homeFragment = HomeFragment()
+    private val lockFragment = LockFragment()
     private val settingFragment = SettingFragment()
-    private val infoFragment = InfoFragment()
-    private val rankingsFragment = RankingsFragment()
-    private val communityFragment = CommunityFragment()
+    private val todoListFragment = TodoListFragment()
+    private val stopwatchFragment = StopwatchFragment()
+    private val noticeFragment = NoticeFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,24 +21,25 @@ class MainActivity : AppCompatActivity() {
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigationview)
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.home -> {
-                    replaceFragment(homeFragment)
+                R.id.lock -> {
+                    replaceFragment(lockFragment)
                     true
                 }
                 R.id.setting -> {
                     replaceFragment(settingFragment)
                     true
                 }
-                R.id.info -> {
-                    replaceFragment(infoFragment)
-                    true
-                }
+
                 R.id.community -> {
-                    replaceFragment(communityFragment)
+                    replaceFragment(noticeFragment)
                     true
                 }
-                R.id.rank -> {
-                    replaceFragment(rankingsFragment)
+                R.id.todo -> {
+                    replaceFragment(todoListFragment)
+                    true
+                }
+                R.id.watch -> {
+                    replaceFragment(stopwatchFragment)
                     true
                 }
                 else -> false
@@ -45,10 +47,28 @@ class MainActivity : AppCompatActivity() {
         }
 
         // 디폴트로 표시할 프래그먼트 설정
-        replaceFragment(homeFragment)
+        replaceFragment(lockFragment)
     }
 
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().replace(R.id.containers, fragment).commit()
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

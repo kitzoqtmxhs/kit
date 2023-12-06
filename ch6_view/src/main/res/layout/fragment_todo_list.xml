@@ -1,0 +1,50 @@
+<!-- fragment_todo_list.xml -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+    <TextView
+        android:id="@+id/community_toolbar_text"
+        android:fontFamily="@font/yourfont"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:text="메모장"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        android:layout_centerHorizontal="true"
+        android:background="#0066ff" />
+    <!-- 투두 리스트를 보여주기 위한 RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTodoList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="#f2f2f2"/>
+
+    <!-- 투두 아이템을 추가할 수 있는 에디트텍스트와 버튼 -->
+    <EditText
+        android:id="@+id/editTextTodo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/yourfont"
+        android:hint="할 것 메모하기"
+        android:inputType="text"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/buttonAddTodo"
+        android:layout_width="wrap_content"
+        android:fontFamily="@font/yourfont"
+        android:layout_height="wrap_content"
+        android:text="추가하기"
+        android:textSize="25sp"
+        android:layout_marginTop="8dp"/>
+</LinearLayout>

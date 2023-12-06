@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@drawable/troy">
+    </ImageView>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#002F3238"
+            android:orientation="vertical"
+            >
+            <TextClock
+                android:id="@+id/hello"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:format12Hour="yyyy년 MM월 dd일"
+                android:gravity="center"
+                android:onClick="fileread"
+                android:textColor="#FFFFFF"
+                android:textSize="40sp"
+                android:contentDescription="하고 싶은 설명"></TextClock>
+
+            <TextClock
+                android:id="@+id/hello2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hello"
+                android:format12Hour="aa hh:mm:ss"
+                android:gravity="center"
+                android:onClick="fileread"
+                android:textColor="#FFFFFF"
+                android:textSize="40sp"
+                android:contentDescription="하고 싶은 설명"></TextClock>
+
+
+            <TextView
+                android:id="@+id/txtRead"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/hello2"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginRight="60dp"
+                android:background="#002F3238"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="잠겨진 앱입니다. 뒤로가기를 눌러 잠금을 해제합니다."
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                ></TextView>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

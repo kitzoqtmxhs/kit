@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="editTextTodo" type="id" />
+    <item name="buttonAddTodo" type="id" />
+    <item name="recyclerViewTodoList" type="id" />
+</resources>

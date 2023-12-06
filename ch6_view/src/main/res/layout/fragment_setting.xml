@@ -40,6 +40,7 @@
                 android:layout_marginRight="70sp"
                 android:gravity="center"
                 android:text="켈린더"
+                android:fontFamily="@font/yourfont"
                 android:textColor="#FFFFFF"
                 android:textSize="50sp" />
         </LinearLayout>
@@ -63,6 +64,7 @@
                 android:layout_height="80dp"
                 android:background="#FFFFFF"
                 android:text="일간"
+                android:fontFamily="@font/yourfont"
                 android:textColor="#000000"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -73,6 +75,7 @@
                 android:layout_height="80dp"
                 android:background="#FFFFFF"
                 android:text="주간"
+                android:fontFamily="@font/yourfont"
                 android:textColor="#000000"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -83,6 +86,7 @@
                 android:layout_height="80dp"
                 android:background="#FFFFFF"
                 android:text="월간"
+                android:fontFamily="@font/yourfont"
                 android:textColor="#000000"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -93,6 +97,7 @@
             android:layout_height="wrap_content"
             android:text="선택한 날짜:"
             android:textSize="30sp"
+            android:fontFamily="@font/yourfont"
             android:layout_marginTop="16dp"
             android:visibility="gone"
             android:textStyle="bold"

@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <TextView
+        android:id="@+id/community_toolbar_text"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:text="스톱워치"
+        android:fontFamily="@font/yourfont"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        android:layout_centerHorizontal="true"
+        android:background="#0066ff" />
+
+
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="48sp"
+        android:format="%s"
+        android:textColor="#333333"
+        android:layout_centerInParent="true" />
+
+
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="시작"
+        android:textSize="25sp"
+        android:fontFamily="@font/yourfont"
+        android:background="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/chronometer"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="저장"
+        android:textSize="25sp"
+        android:fontFamily="@font/yourfont"
+        android:background="#2196F3"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/btnStart"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="초기화"
+        android:textSize="25sp"
+        android:fontFamily="@font/yourfont"
+        android:background="#F44336"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/btnSave"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
